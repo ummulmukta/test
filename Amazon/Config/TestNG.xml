@@ -1,0 +1,10 @@
+<suite name="Suite1" verbose="1" >
+  <test name="Nopackage" >
+    <classes>
+     <class name="com.tt.testngrunner.LoginRunner"/> 
+    <!--  <class name="com.tt.testngrunner.DropdownRunner"/> 
+     <class name="com.tt.testngrunner.MouseHoverRunner"/>  -->
+    </classes>
+  </test>
+</suite>
+ 
