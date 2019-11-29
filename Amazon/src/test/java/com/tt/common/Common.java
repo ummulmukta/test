@@ -8,13 +8,13 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.opera.OperaDriver;
 
 public class Common {
-	private static String getURL = "https://www.amazon.com/";
+	/*
+	 * private static String getURL = "https://www.amazon.com/";
+	 * 
+	 * public static String getGetURL() { return getURL; }
+	 */
 
-	public static String getGetURL() {
-		return getURL;
-	}
-
-	WebDriver driver;
+	//public WebDriver driver;
 
 	public static WebDriver getBrowser(String BrowserName, WebDriver driver) {
 		if (BrowserName.equalsIgnoreCase("chrome")) {
@@ -22,15 +22,17 @@ public class Common {
 			driver = new ChromeDriver();
 		}
 
-		if (BrowserName.equalsIgnoreCase("opera")) {
-			System.setProperty("webdriver.opera.driver", "./Driver/operadriver.exe");
-			driver = new OperaDriver();
-		}
+		/*
+		 * if (BrowserName.equalsIgnoreCase("opera")) {
+		 * System.setProperty("webdriver.opera.driver", "./Driver/operadriver.exe");
+		 * driver = new OperaDriver(); }
+		 */
 
-		else if (BrowserName.equalsIgnoreCase("geckodriver")) {
-			System.setProperty("webdriver.opera.driver", "./Driver/geckodriver.exe");
+		else if (BrowserName.equalsIgnoreCase("firefox")) {
+			System.setProperty("webdriver.gecko.driver", "/Driver/geckodriver.exe");
 			driver = new FirefoxDriver();
 		}
+		driver.get("https://www.amazon.com");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 

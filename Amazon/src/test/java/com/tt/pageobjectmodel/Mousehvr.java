@@ -5,6 +5,7 @@ import java.io.File;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -24,12 +25,22 @@ PageFactory.initElements(driver,this);
 	 * @FindBy(xpath="(//li[@class='hl-cat-nav__js-tab'])[2]") private WebElement
 	 * Fashion; public WebElement getFashion() { return Fashion;}
 	 */
-
 public void mshover() throws InterruptedException{
 	 Actions ac = new Actions (driver);
 	  WebElement we = driver.findElement(By.xpath("(//a[@class='nav-a nav-a-2'])[1]"));
+	  we.sendKeys(Keys.chord(Keys.SHIFT,Keys.ENTER));
+	  
 	  ac.moveToElement(we).moveToElement(driver.findElement(By.xpath("(//a[@class='nav-link nav-item'])[3]"))).click().build().perform();
-	  	}
+	 // ac.sendKeys(keys.con)
+	  
+	  Actions act=new Actions(driver);
+	  WebElement ad=driver.findElement(By.xpath("//span[contains(text(),'Hello, Sign in')]"));
+	 // ad.sendKeys(Keys.chord(ke));
+	  ad.sendKeys(Keys.ENTER);
+	  act.moveToElement(ad).moveToElement(driver.findElement(By.xpath("//span[contains(text(),'Your Orders')]"))).click().build().perform();
+
+}
+
 	/*
 	 * public void moushvr() throws Throwable { Actions ac = new Actions (driver);
 	 * WebElement we =

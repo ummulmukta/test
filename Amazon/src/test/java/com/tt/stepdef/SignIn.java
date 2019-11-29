@@ -2,6 +2,7 @@ package com.tt.stepdef;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import com.tt.common.Common;
@@ -33,7 +34,8 @@ public class SignIn {
 	@When("^Click on signin button$")
 	public void click_on_signin_button() throws Throwable {
 	si.getSigninButton().click();    
-	   
+	 
+	 
 	}
 
 	@When("^put Username as \"([^\"]*)\" and password as \"([^\"]*)\"$")

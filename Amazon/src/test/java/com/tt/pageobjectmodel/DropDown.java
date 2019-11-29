@@ -13,7 +13,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class DropDown {
 WebDriver driver;
@@ -29,6 +32,9 @@ public WebElement getOptionButton() {
 
 public void select(){
 	Select slt = new Select (driver.findElement(By.xpath("//select[@class='nav-search-dropdown searchSelect']")));
+	WebDriverWait wait=new WebDriverWait(driver,20);
+	//WebElement element =wait.until(ExpectedConditions.elementToBeClickable(By.id(""))));
+	
 	slt.selectByVisibleText("Baby");
 	WebElement we = slt.getFirstSelectedOption();
 	System.out.println(we);
